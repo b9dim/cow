@@ -1,0 +1,23 @@
+import "./globals.css";
+export const metadata = {
+  title: "عرض الشعار | Logo Showcase",
+  description: "عرض تفاعلي إبداعي يوضح طبقات الشعار والخطوات والموك أب.",
+  manifest: "/site.webmanifest",
+};
+
+export default function RootLayout({ children }) {
+  return (
+    <html lang="ar" dir="rtl">
+      <head>
+        <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+        <meta name="apple-mobile-web-app-capable" content="yes" />
+        <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
+      </head>
+      <body className="min-h-screen bg-[#3d4a5d] text-white antialiased">
+        {children}
+      </body>
+    </html>
+  );
+}
+
+

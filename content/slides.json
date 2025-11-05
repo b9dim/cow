@@ -1,0 +1,14 @@
+[
+  {
+    "slug": "simbologia",
+    "title": "سيمبولوجيا",
+    "type": "simbologia",
+    "theme": {
+      "bloom": 0.35,
+      "camera": { "position": [0, 0, 5.2], "fov": 60 },
+      "layers": { "reveal": 0, "spacing": 0.06, "mergeProgress": 0 }
+    }
+  }
+]
+
+
