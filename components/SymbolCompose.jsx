@@ -321,11 +321,9 @@ export default function SymbolCompose() {
       tlRef.current = null;
     };
   }, [merged, finalSvgPrepared, runId]);
-
   return (
     <section className="relative z-10 min-h-[100dvh] grid place-items-center px-4 md:px-6" data-no-nav>
       <div className="max-w-5xl mx-auto w-full">
-
         <AnimatePresence>
           {merged && (
             <div
@@ -366,12 +364,20 @@ export default function SymbolCompose() {
             </div>
           )}
         </AnimatePresence>
+        {merged && (
+          <p className="mt-8 text-center text-sm md:text-base tracking-wide leading-relaxed text-neutral-200/80">
+            This art concords naturally into a balanced, harmonious symbol that reflects the values of architectural planning.
+          </p>
+        )}
         {!merged && (
           <>
             <div
               className="mt-6 md:mt-10 grid place-items-center cursor-pointer select-none"
               role="button"
-              onClick={() => { setMerged(true); setRunId((v) => v + 1); }}
+              onClick={() => {
+                setMerged(true);
+                setRunId((v) => v + 1);
+              }}
             >
               <div className="relative w-44 h-44 md:w-64 md:h-64">
                 {finalSvgPrepared ? (
@@ -394,6 +400,9 @@ export default function SymbolCompose() {
                 </div>
               ) : null}
             </div>
+            <p className="mt-8 text-center text-sm md:text-base tracking-wide leading-relaxed text-neutral-200/80">
+              This art concords naturally into a balanced, harmonious symbol that reflects the values of architectural planning.
+            </p>
             <div
               className="mt-4 text-center text-xs md:text-sm opacity-70 cursor-pointer select-none"
               role="button"
