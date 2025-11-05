@@ -321,103 +321,112 @@ export default function SymbolCompose() {
       tlRef.current = null;
     };
   }, [merged, finalSvgPrepared, runId]);
-  return (
-    <section className="relative z-10 min-h-[100dvh] grid place-items-center px-4 md:px-6" data-no-nav>
-      <div className="max-w-5xl mx-auto w-full">
-        <AnimatePresence>
+    return (
+      <section className="relative z-10 min-h-[100dvh] grid place-items-center px-4 md:px-6" data-no-nav dir="ltr">
+        <div className="max-w-5xl mx-auto w-full">
+          <AnimatePresence>
+            {merged && (
+              <div
+                className="mt-6 md:mt-10 grid place-items-center cursor-pointer select-none"
+                role="button"
+                onClick={() => {
+                  // إعادة التشغيل بعد الانتهاء أو أثناء التشغيل
+                  setRunId((v) => v + 1);
+                }}
+              >
+                <div className="relative w-44 h-44 md:w-64 md:h-64">
+                  {/* عرض final.svg كنص وإجراء الأنيميشن داخل DOM */}
+                  {finalSvgPrepared ? (
+                    <div
+                      ref={svgHostRef}
+                      className="absolute inset-0"
+                      dangerouslySetInnerHTML={{ __html: finalSvgPrepared }}
+                    />
+                  ) : (
+                    <motion.img
+                      src={finalLogo}
+                      alt="final"
+                      className="absolute inset-0 w-full h-full object-contain"
+                      initial={{ opacity: 0 }}
+                      animate={{ opacity: 1 }}
+                    />
+                  )}
+                </div>
+                {nameSvgPrepared ? (
+                  <div className="relative mt-12 md:mt-12 w-56 md:w-72 h-10 md:h-12">
+                    <div
+                      ref={nameHostRef}
+                      className="absolute inset-0"
+                      dangerouslySetInnerHTML={{ __html: nameSvgPrepared }}
+                    />
+                  </div>
+                ) : null}
+              </div>
+            )}
+          </AnimatePresence>
           {merged && (
-            <div
-              className="mt-6 md:mt-10 grid place-items-center cursor-pointer select-none"
-              role="button"
-              onClick={() => {
-                // إعادة التشغيل بعد الانتهاء أو أثناء التشغيل
-                setRunId((v) => v + 1);
-              }}
+            <p
+              className="mt-8 text-center text-sm md:text-base tracking-wide leading-relaxed text-neutral-200/80 font-sans"
+              dir="ltr"
             >
-              <div className="relative w-44 h-44 md:w-64 md:h-64">
-                {/* عرض final.svg كنص وإجراء الأنيميشن داخل DOM */}
-                {finalSvgPrepared ? (
-                  <div
-                    ref={svgHostRef}
-                    className="absolute inset-0"
-                    dangerouslySetInnerHTML={{ __html: finalSvgPrepared }}
-                  />
-                ) : (
-                  <motion.img
-                    src={finalLogo}
-                    alt="final"
-                    className="absolute inset-0 w-full h-full object-contain"
-                    initial={{ opacity: 0 }}
-                    animate={{ opacity: 1 }}
-                  />
-                )}
-              </div>
-              {nameSvgPrepared ? (
-                <div className="relative mt-12 md:mt-12 w-56 md:w-72 h-10 md:h-12">
-                  <div
-                    ref={nameHostRef}
-                    className="absolute inset-0"
-                    dangerouslySetInnerHTML={{ __html: nameSvgPrepared }}
-                  />
-                </div>
-              ) : null}
-            </div>
-          )}
-        </AnimatePresence>
-        {merged && (
-          <p className="mt-8 text-center text-sm md:text-base tracking-wide leading-relaxed text-neutral-200/80">
-            This art concords naturally into a balanced, harmonious symbol that reflects the values of architectural planning.
-          </p>
-        )}
-        {!merged && (
-          <>
-            <div
-              className="mt-6 md:mt-10 grid place-items-center cursor-pointer select-none"
-              role="button"
-              onClick={() => {
-                setMerged(true);
-                setRunId((v) => v + 1);
-              }}
-            >
-              <div className="relative w-44 h-44 md:w-64 md:h-64">
-                {finalSvgPrepared ? (
-                  <div
-                    ref={svgHostRef}
-                    className="absolute inset-0"
-                    dangerouslySetInnerHTML={{ __html: finalSvgPrepared }}
-                  />
-                ) : (
-                  <img src={finalLogo} alt="final" className="absolute inset-0 w-full h-full object-contain" />
-                )}
-              </div>
-              {nameSvgPrepared ? (
-                <div className="relative mt-12 md:mt-12 w-56 md:w-72 h-10 md:h-12">
-                  <div
-                    ref={nameHostRef}
-                    className="absolute inset-0"
-                    dangerouslySetInnerHTML={{ __html: nameSvgPrepared }}
-                  />
-                </div>
-              ) : null}
-            </div>
-            <p className="mt-8 text-center text-sm md:text-base tracking-wide leading-relaxed text-neutral-200/80">
               This art concords naturally into a balanced, harmonious symbol that reflects the values of architectural planning.
             </p>
-            <div
-              className="mt-4 text-center text-xs md:text-sm opacity-70 cursor-pointer select-none"
-              role="button"
-              onClick={() => setMerged(true)}
-            >
-              
-            </div>
-          </>
-        )}
-        {/* controls hidden for direct auto start */}
-      </div>
-      <div className="pointer-events-none absolute bottom-10 md:bottom-12 left-0 right-0 text-center text-[10px] md:text-xs opacity-60">
-        By : ABDULLAH ALASMSARI - 2025 @ ALL RIGHTS RESERVED
-      </div>
-    </section>
-  );
+          )}
+          {!merged && (
+            <>
+              <div
+                className="mt-6 md:mt-10 grid place-items-center cursor-pointer select-none"
+                role="button"
+                onClick={() => {
+                  setMerged(true);
+                  setRunId((v) => v + 1);
+                }}
+              >
+                <div className="relative w-44 h-44 md:w-64 md:h-64">
+                  {finalSvgPrepared ? (
+                    <div
+                      ref={svgHostRef}
+                      className="absolute inset-0"
+                      dangerouslySetInnerHTML={{ __html: finalSvgPrepared }}
+                    />
+                  ) : (
+                    <img src={finalLogo} alt="final" className="absolute inset-0 w-full h-full object-contain" />
+                  )}
+                </div>
+                {nameSvgPrepared ? (
+                  <div className="relative mt-12 md:mt-12 w-56 md:w-72 h-10 md:h-12">
+                    <div
+                      ref={nameHostRef}
+                      className="absolute inset-0"
+                      dangerouslySetInnerHTML={{ __html: nameSvgPrepared }}
+                    />
+                  </div>
+                ) : null}
+              </div>
+              <p
+                className="mt-8 text-center text-sm md:text-base tracking-wide leading-relaxed text-neutral-200/80 font-sans"
+                dir="ltr"
+              >
+                This art concords naturally into a balanced, harmonious symbol that reflects the values of architectural planning.
+              </p>
+              <div
+                className="mt-4 text-center text-xs md:text-sm opacity-70 cursor-pointer select-none"
+                role="button"
+                onClick={() => setMerged(true)}
+              >
+                
+              </div>
+            </>
+          )}
+          {/* controls hidden for direct auto start */}
+        </div>
+        <div
+          className="pointer-events-none absolute bottom-10 md:bottom-12 left-0 right-0 text-center text-[10px] md:text-xs opacity-60 font-sans"
+          dir="ltr"
+        >
+          By : ABDULLAH ALASMSARI - 2025 @ ALL RIGHTS RESERVED
+        </div>
+      </section>
+    );
 }
 
