@@ -366,8 +366,10 @@ export default function SymbolCompose() {
         </AnimatePresence>
         {merged && (
 <p className="mt-8 text-center text-sm md:text-base tracking-wide leading-relaxed text-neutral-200/80">
-  Where structure meets <span className="font-bold">harmony</span> this mark reflects the enduring spirit of architectural planning
+  where structure meets <span className="font-bold">harmony</span><br />
+  <span className="whitespace-nowrap">this mark reflects the enduring spirit of architectural planning</span>
 </p>
+
 
         )}
         {!merged && (
@@ -402,7 +404,8 @@ export default function SymbolCompose() {
               ) : null}
             </div>
 <p className="mt-8 text-center text-sm md:text-base tracking-wide leading-relaxed text-neutral-200/80">
-  Where structure meets <span className="font-bold">harmony</span> this mark reflects the enduring spirit of architectural planning
+  where structure meets <span className="font-bold">harmony</span><br />
+  <span className="whitespace-nowrap">this mark reflects the enduring spirit of architectural planning</span>
 </p>
             <div
               className="mt-4 text-center text-xs md:text-sm opacity-70 cursor-pointer select-none"
