@@ -1,7 +1,7 @@
 import "./globals.css";
 export const metadata = {
-  title: "عرض الشعار | Logo Showcase",
-  description: "عرض تفاعلي إبداعي يوضح طبقات الشعار والخطوات والموك أب.",
+  title: "CONCORD | Logo Showcase",
+  description: "This art concords naturally into a balanced, harmonious symbol that reflects the values of architectural planning.",
   manifest: "/site.webmanifest",
 };
 
