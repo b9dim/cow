@@ -41,7 +41,7 @@ function LogoSpinner() {
     <svg width="140" height="140" viewBox="0 0 100 100" aria-hidden>
       <defs>
         <linearGradient id="g" x1="0" x2="1">
-          <stop offset="0%" stopColor="#00FFD1" />
+          <stop offset="0%" stopColor="#eef0e4" />
           <stop offset="100%" stopColor="#eef0e4" />
         </linearGradient>
       </defs>
