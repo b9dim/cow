@@ -366,7 +366,7 @@ export default function SymbolCompose() {
         </AnimatePresence>
         {merged && (
           <p className="mt-8 text-center text-sm md:text-base tracking-wide leading-relaxed text-neutral-200/80">
-            This art concords naturally into a balanced, harmonious symbol that reflects the values of architectural planning.
+            This art concords naturally into a balanced, harmonious symbol that reflects the values of architectural planning
           </p>
         )}
         {!merged && (
