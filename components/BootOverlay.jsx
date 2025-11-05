@@ -48,7 +48,7 @@ function LogoSpinner() {
       <circle cx="50" cy="50" r="30" fill="none" stroke="url(#g)" strokeWidth="3" strokeLinecap="round" strokeDasharray="188" strokeDashoffset="188">
         <animate attributeName="stroke-dashoffset" from="188" to="0" dur="1.2s" repeatCount="indefinite" />
       </circle>
-      <circle cx="50" cy="50" r="1.6" fill="#00FFD1">
+      <circle cx="50" cy="50" r="1.6" fill="#eef0e4">
         <animateTransform attributeName="transform" type="rotate" from="0 50 50" to="360 50 50" dur="1.2s" repeatCount="indefinite" />
       </circle>
     </svg>
